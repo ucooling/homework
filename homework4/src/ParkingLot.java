@@ -32,7 +32,7 @@ public class ParkingLot {
     }
 
     public Integer rateSurplusCapacity(){
-        return Math.round((capacity - parkingCar.size()) / capacity * 100);
+        return Math.round((capacity - parkingCar.size()) / capacity * 1000000);
     }
 
     public Car getCar(Certificate certificate) {
