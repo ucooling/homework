@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ParkingMan {
+public class ParkingMan implements ParkingBoy {
     private static ArrayList parkingLotList = new ArrayList();
     private static int index = 0;
 
@@ -12,10 +12,12 @@ public class ParkingMan {
         return parkingLotList;
     }
 
+    @Override
     public void setParkingLot(ParkingLot parkingLot) {
         parkingLotList.add(parkingLot);
     }
 
+    @Override
     public Certificate parkingCar(Car car){
         Certificate certificate = null;
         if(!(((ParkingLot)parkingLotList.get(index)).isFull())){
@@ -27,6 +29,7 @@ public class ParkingMan {
         return certificate;
     }
 
+    @Override
     public Car getCar(Certificate certificate){
         Car car = certificate.getParkingLot().getCar(certificate);
         return car;

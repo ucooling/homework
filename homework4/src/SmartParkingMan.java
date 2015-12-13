@@ -1,8 +1,9 @@
 import java.util.*;
 
-public class SmartParkingMan {
+public class SmartParkingMan implements ParkingBoy {
     private static ArrayList parkingLots = new ArrayList();
 
+    @Override
     public void setParkingLot(ParkingLot parkingLot) {
         parkingLots.add(parkingLot);
     }
@@ -19,6 +20,7 @@ public class SmartParkingMan {
         Collections.reverse(parkingLots);
     }
 
+    @Override
     public Certificate parkingCar(Car car) {
         Certificate certificate = null;
         sortParkingLot();
@@ -28,7 +30,7 @@ public class SmartParkingMan {
         return certificate;
     }
 
-
+    @Override
     public Car getCar(Certificate certificate) {
         return certificate.getParkingLot().getCar(certificate);
     }

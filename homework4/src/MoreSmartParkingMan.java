@@ -2,9 +2,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class MoreSmartParkingMan {
+public class MoreSmartParkingMan implements ParkingBoy {
     private static ArrayList parkingLots = new ArrayList();
 
+    @Override
     public void setParkingLot(ParkingLot parkingLot) {
         parkingLots.add(parkingLot);
     }
@@ -21,6 +22,7 @@ public class MoreSmartParkingMan {
         Collections.reverse(parkingLots);
     }
 
+    @Override
     public Certificate parkingCar(Car car) {
         Certificate certificate = null;
         sortParkingLot();
@@ -30,6 +32,7 @@ public class MoreSmartParkingMan {
         return certificate;
     }
 
+    @Override
     public Car getCar(Certificate certificate) {
         return certificate.getParkingLot().getCar(certificate);
     }

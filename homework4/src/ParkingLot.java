@@ -35,7 +35,6 @@ public class ParkingLot {
         return Math.round((capacity - parkingCar.size()) / capacity * 100);
     }
 
-
     public Car getCar(Certificate certificate) {
         return parkingCar.remove(certificate);
     }
